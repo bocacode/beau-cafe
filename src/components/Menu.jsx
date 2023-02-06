@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import MenuCard from './MenuCard'
 import './menu.css'
 
 export default function Menu() {
@@ -21,11 +22,11 @@ export default function Menu() {
         ? <h2>{message}</h2>
         : <section className='coffee-container'>
           {coffees.map(coffee => (
-            <div key={coffee.id} className="coffee-card">
-              <img src={coffee.image} alt={coffee.title} />
-              <h3>{coffee.title}</h3>
-              <p>{coffee.description}</p>
-            </div>
+            <MenuCard key={coffee.id}
+              description={coffee.description}
+              title={coffee.title}
+              image={coffee.image}
+            />
           ))}
         </section>
       }
